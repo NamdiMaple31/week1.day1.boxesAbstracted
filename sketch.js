@@ -1,12 +1,13 @@
 const number_of_boxes_in_row = 10;
-const number_of_boxes_in_column = 1;
+const number_of_boxes_in_column = 10;
+
 
 let box_width, box_height;
 
 function setup(){
     createCanvas(600,600);
-    box_height = height;
-    box_width = ___;
+    box_height = height/number_of_boxes_in_column/2;
+    box_width = width/number_of_boxes_in_row/2;
     // TASK #1 - set the box_width as the width of the canvas
     // divided by the number of boxes in a row.
 }
@@ -14,13 +15,13 @@ function setup(){
 function draw(){
     // TASK #2 - loop through each box in the row by
     // replacing the blank with the correct number/variable
-    for(let i = 0; i < ___ ; i++){
-        const y = ___;
+    for(let i = 0; i < number_of_boxes_in_row ; i++){
+        const y = 60;
         // TASK #3 - replace the blank with the y-coordinate for 
         // current box
         // HINT: it will always be the same
 
-        const x = ___;
+        const x = i * box_width;
         // TASK #4 - replace the blank with the x-coordinate for 
         // current box
         // HINT: this changes with each box in the row
@@ -50,6 +51,11 @@ function draw(){
         // a loop! Loop-ception?
 
         // create 2nd loop here!
+        for (let j = 0; j < number_of_boxes_in_column; j++) {
+            const y = j * box_height;
+            customFill(i,y);
+            rect(x,y,box_width,box_height);
+       }
 
         // TASK #9 - comment out the "const y" from earlier
         
